@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>BLOGiT</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/blog.css" />
+	</head>
+	<body>
+		<header>
+			<a href="blogs.html"><h1 class="txt__xl">BLOGiT</h1></a>
+			<div class="navigation" onclick="showNavigation('navigation', 'arrow')">
+				<i class="bi bi-person-circle profile-picture"></i>
+				<!-- <img
+					src="img/361643035_297507929617738_6590385448813277414_n.jpg"
+					alt=""
+					class="profile-picture"
+				/> -->
+				<i class="bi bi-caret-down-fill nav-closed" id="arrow"></i>
+			</div>
+			<nav class="hidden" id="navigation">
+				<ul class="txt__s">
+					<li class="btn"><a href="blogs.html">Home</a></li>
+					<li class="btn"><a href="">My Profile</a></li>
+					<li class="btn"><a href="">Account Settings</a></li>
+					<form class="btn" action="../index.html">
+						<button type="submit">Logout</button>
+					</form>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section class="actions">
+				<form action="#" class="search--group">
+					<input
+						type="text"
+						name="search"
+						id="search"
+						placeholder="Search"
+						class="txt__s"
+					/>
+					<button type="submit" class="search--button">
+						<i class="bi bi-search"></i>
+					</button>
+				</form>
+				<a href="create_blog.html" class="btn">
+					<i class="bi bi-plus-circle-fill"></i>
+					<p class="txt__s">Create New Blog</p>
+				</a>
+			</section>
+			<section class="blog--container">
+				<a href="blogs.html"><i class="bi bi-arrow-left txt__xl"></i></a>
+				<h1 class="blog--title txt__l">Blog Title</h1>
+				<p class="blog--author txt__s">
+					January 01, 1990 by Kian James Querubin
+				</p>
+				<div class="blog--image">
+					<div class="no-image"><i class="bi bi-image"></i></div>
+					<!-- <img src="https://placehold.co/400x400" alt="" /> -->
+				</div>
+				<p class="blog--description txt__s">
+					This is a sample paragraph of a blog description of a blog in Blogit.
+					Only maximum of 2 lines will be shown on homepage. More than that will
+					be cut. The rest of the paragraph will be shown in this page. In the
+					ever-evolving world of blogging, Blogit takes center stage as a
+					platform designed to captivate readers' attention from the very first
+					glimpse. With a unique feature that displays just a maximum of two
+					lines on the homepage, Blogit keeps users intrigued and eager to click
+					for more. As a blogger, this minimalist approach serves as a powerful
+					tool to entice visitors while preserving an element of curiosity. And
+					when they do click through, the magic unfolds, revealing the rest of
+					your thoughtfully crafted paragraph on this dedicated page. Our
+					user-friendly interface and intuitive design make blogging a breeze on
+					Blogit. You can seamlessly express your ideas, stories, or insights,
+					knowing that the initial two-line snippet acts as your online teaser,
+					beckoning readers to explore the depth of your content. Whether you're
+					a seasoned blogger or just starting your journey, Blogit ensures that
+					your audience is always intrigued and engaged, offering a unique
+					platform that strikes the perfect balance between curiosity and
+					satisfaction. So go ahead, share your thoughts with the world, and let
+					Blogit's innovative approach amplify your blogging experience.
+				</p>
+			</section>
+		</main>
+		<footer></footer>
+	</body>
+	<script src="js/showNavigation.js"></script>
+</html>

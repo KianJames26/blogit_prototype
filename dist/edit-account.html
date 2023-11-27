@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>BLOGiT</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/edit-account.css" />
+	</head>
+	<body>
+		<header>
+			<a href="blogs.html"><h1 class="txt__xl">BLOGiT</h1></a>
+			<div class="navigation" onclick="showNavigation('navigation', 'arrow')">
+				<i class="bi bi-person-circle profile-picture"></i>
+				<!-- <img
+					src="img/361643035_297507929617738_6590385448813277414_n.jpg"
+					alt=""
+					class="profile-picture"
+				/> -->
+				<i class="bi bi-caret-down-fill nav-closed" id="arrow"></i>
+			</div>
+			<nav class="hidden" id="navigation">
+				<ul class="txt__s">
+					<li class="btn"><a href="blogs.html">Home</a></li>
+					<li class="btn"><a href="">My Profile</a></li>
+					<li class="btn"><a href="">Account Settings</a></li>
+					<form class="btn" action="../index.html">
+						<button type="submit">Logout</button>
+					</form>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<h2 class="txt__l">Account Settings</h2>
+			<div class="profile--picture">
+				<i class="bi bi-person-circle" id="currentImage"></i>
+				<!-- <img
+					src="img/361643035_297507929617738_6590385448813277414_n.jpg"
+					alt=""
+					class="profile-picture"
+          id="currentImage"
+				/> -->
+				<img src="" alt="" id="imagePreview" />
+			</div>
+			<form action="" enctype="multipart/form-data">
+				<div class="form--group">
+					<label for="profile_picture" class="txt__s"
+						>Upload New Profile Picture</label
+					>
+					<input
+						type="file"
+						name="profile_picture"
+						id="profile_picture"
+						class="txt__s"
+						accept="image/png, image/jpeg, image/jpg, image/tiff, image/tif"
+					/>
+					<label for="profile_picture" class="custom--upload__style">
+						<p class="txt__s" id="fileName">No file chosen</p>
+						<div class="btn txt__s" type="button">Choose File</div>
+					</label>
+					<i class="bi bi-x-circle-fill" id="removeUpload"></i>
+				</div>
+				<div class="form--group">
+					<label for="first_name" class="txt__s">First Name</label>
+					<input
+						type="text"
+						name="first_name"
+						id="first_name"
+						class="txt__s btn"
+					/>
+				</div>
+				<div class="form--group">
+					<label for="last_name" class="txt__s">Last Name</label>
+					<input
+						type="text"
+						name="last_name"
+						id="last_name"
+						class="txt__s btn"
+					/>
+				</div>
+				<div class="form--group">
+					<label for="username" class="txt__s">Username</label>
+					<input type="text" name="username" id="username" class="txt__s btn" />
+				</div>
+				<div class="form--group">
+					<label for="email" class="txt__s">Email</label>
+					<input type="text" name="email" id="email" class="txt__s btn" />
+				</div>
+				<div class="action--group">
+					<input type="submit" value="Save Changes" class="txt__s btn" />
+					<a class="txt__s--bold" id="changePasswordBtn">Change Password</a>
+					<a class="txt__s--bold" id="deleteAccountBtn">Delete Account</a>
+				</div>
+			</form>
+
+			<div class="overlay" id="overlay">
+				<form
+					action=""
+					id="changePasswordBox"
+					autocomplete="off"
+					class="hidden"
+				>
+					<h2 class="txt__l">Change Password</h2>
+					<div class="form--group">
+						<label for="current_password" class="txt__s"
+							>Current Password</label
+						>
+						<input
+							type="password"
+							name="current_password"
+							id="current_password"
+							class="txt__s btn"
+						/>
+						<i
+							class="bi bi-eye-slash-fill"
+							id="currentPasswordIcon"
+							onclick="showPassword('current_password', 'currentPasswordIcon')"
+						></i>
+					</div>
+					<div class="form--group">
+						<label for="new_password" class="txt__s">New Password</label>
+						<input
+							type="password"
+							name="new_password"
+							id="new_password"
+							class="txt__s btn"
+						/>
+						<i
+							class="bi bi-eye-slash-fill"
+							id="newPasswordIcon"
+							onclick="showPassword('new_password', 'newPasswordIcon')"
+						></i>
+					</div>
+					<div class="form--group">
+						<label for="password_confirmation" class="txt__s"
+							>Confirm Password</label
+						>
+						<input
+							type="password"
+							name="password_confirmation"
+							id="password_confirmation"
+							class="txt__s btn"
+						/>
+						<i
+							class="bi bi-eye-slash-fill"
+							id="confirmPasswordIcon"
+							onclick="showPassword('password_confirmation', 'confirmPasswordIcon')"
+						></i>
+					</div>
+					<div class="action--group">
+						<button
+							type="button"
+							class="txt__s--bold btn"
+							id="changePasswordCloseBtn"
+						>
+							Cancel
+						</button>
+						<input type="submit" value="Change Password" class="txt__s btn" />
+					</div>
+				</form>
+
+				<form action="" id="deleteAccountBox" autocomplete="off" class="hidden">
+					<h2 class="txt__l">Account Deletion</h2>
+					<div class="form--group">
+						<label for="password" class="txt__s"
+							>Please Enter Your Current Password to Confirm Account
+							Deletion</label
+						>
+						<input
+							type="password"
+							name="password"
+							id="password"
+							class="txt__s btn"
+						/>
+						<i
+							class="bi bi-eye-slash-fill"
+							id="passwordIcon"
+							onclick="showPassword('password', 'passwordIcon')"
+						></i>
+					</div>
+					<div class="action--group">
+						<button
+							type="button"
+							class="txt__s--bold btn"
+							id="deleteAccountCloseBtn"
+						>
+							Cancel
+						</button>
+						<input
+							type="submit"
+							value="Delete Account"
+							class="txt__s btn"
+							id="deleteAccountSubmitBtn"
+						/>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<footer></footer>
+	</body>
+	<script src="js/toggleOverlay.js"></script>
+	<script src="js/showPassword.js"></script>
+	<script src="js/previewProfilePicture.js"></script>
+	<script src="js/showNavigation.js"></script>
+</html>

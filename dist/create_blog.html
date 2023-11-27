@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>BLOGiT</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/create_blog.css" />
+	</head>
+	<body>
+		<header>
+			<a href="blogs.html"><h1 class="txt__xl">BLOGiT</h1></a>
+			<div class="navigation" onclick="showNavigation('navigation', 'arrow')">
+				<i class="bi bi-person-circle profile-picture"></i>
+				<!-- <img
+					src="img/361643035_297507929617738_6590385448813277414_n.jpg"
+					alt=""
+					class="profile-picture"
+				/> -->
+				<i class="bi bi-caret-down-fill nav-closed" id="arrow"></i>
+			</div>
+			<nav class="hidden" id="navigation">
+				<ul class="txt__s">
+					<li class="btn"><a href="blogs.html">Home</a></li>
+					<li class="btn"><a href="">My Profile</a></li>
+					<li class="btn"><a href="">Account Settings</a></li>
+					<form class="btn" action="../index.html">
+						<button type="submit">Logout</button>
+					</form>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<a href="blogs.html"><i class="bi bi-arrow-left txt__xl"></i></a>
+			<h2 class="txt__l">Create New Blog</h2>
+			<form action="blogs.html" enctype="multipart/form-data">
+				<div class="form--group">
+					<label for="title" class="txt__s">
+						Title <span class="required txt__s"></span>
+					</label>
+					<input type="text" name="title" id="title" class="btn txt__s" />
+				</div>
+				<div class="form--group">
+					<label for="description" class="txt__s">
+						Description <span class="required txt__s"></span>
+					</label>
+					<textarea
+						name="description"
+						id="description"
+						class="txt__s btn"
+					></textarea>
+				</div>
+				<div class="form--group">
+					<label for="image" class="txt__s">Blog Image (Optional)</label>
+					<input
+						type="file"
+						name="image"
+						id="image"
+						accept="image/png, image/jpeg, image/jpg, image/tiff, image/tif"
+					/>
+					<label for="image" class="custom--file__style" id="dragZone">
+						<div class="custom--file__label">
+							<i class="bi bi-cloud-plus-fill"></i>
+							<p class="txt__m">Drag or Browse for Image</p>
+						</div>
+					</label>
+					<div class="image--preview" id="imagePreview">
+						<div class="remove--image" onclick="removePreview()">
+							<i class="bi bi-x-circle-fill"></i>
+						</div>
+						<img
+							src="https://placehold.co/3000x4000"
+							alt=""
+							id="selectedImage"
+						/>
+					</div>
+				</div>
+				<button type="submit" class="btn txt__s">
+					<i class="bi bi-check-circle-fill"></i> Post Blog
+				</button>
+			</form>
+		</main>
+		<footer></footer>
+	</body>
+	<script src="js/dragAndDropFile.js"></script>
+	<script src="js/showUploadedImage.js"></script>
+	<script src="js/showNavigation.js"></script>
+</html>

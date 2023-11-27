@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Sign Up to BLOGiT</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+	<body>
+		<header>
+			<a href="../index.html"><h1 class="txt__xl">BLOGiT</h1></a>
+		</header>
+		<main>
+			<form action="login.html" autocomplete="off">
+				<!-- @csrf -->
+				<h2 class="txt__l">Sign Up</h2>
+				<div class="form-group">
+					<input
+						type="text"
+						name="first_name"
+						id="first_name"
+						placeholder=" "
+						class="txt__s"
+					/>
+					<label for="first_name" class="txt__s">First Name</label>
+				</div>
+				<div class="form-group">
+					<input
+						type="text"
+						name="last_name"
+						id="last_name"
+						placeholder=" "
+						class="txt__s"
+					/>
+					<label for="last_name" class="txt__s">Last Name</label>
+				</div>
+				<div class="form-group">
+					<input
+						type="text"
+						name="username"
+						id="username"
+						placeholder=" "
+						class="txt__s"
+					/>
+					<label for="username" class="txt__s">Username</label>
+				</div>
+				<div class="form-group">
+					<input
+						type="text"
+						name="email"
+						id="email"
+						placeholder=" "
+						class="txt__s"
+					/>
+					<label for="email" class="txt__s">Email</label>
+				</div>
+				<div class="form-group">
+					<input
+						type="password"
+						name="password"
+						id="password"
+						placeholder=" "
+						class="txt__s"
+						autocomplete="off"
+					/>
+					<label for="password" class="txt__s">Password</label>
+					<i
+						class="bi bi-eye-slash-fill"
+						id="passwordIcon"
+						onclick="showPassword('password', 'passwordIcon')"
+					></i>
+					<div class="error__container">
+						<i class="bi bi-exclamation-triangle-fill txt__xs"></i>
+						<p class="txt__xs">This is an Error Message</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<input
+						type="password"
+						name="password_confirmation"
+						id="password_confirmation"
+						placeholder=" "
+						class="txt__s"
+						autocomplete="off"
+					/>
+					<label for="password_confirmation" class="txt__s"
+						>Confirm Password</label
+					>
+					<i
+						class="bi bi-eye-slash-fill"
+						id="passwordConfirmationIcon"
+						onclick="showPassword('password_confirmation', 'passwordConfirmationIcon')"
+					></i>
+				</div>
+				<input type="submit" value="Sign Up" class="txt__s btn" />
+				<p class="txt__s">
+					Already have an account? <a href="login.html">Click Here</a> to Login
+				</p>
+			</form>
+		</main>
+	</body>
+	<script src="js/showPassword.js"></script>
+</html>
